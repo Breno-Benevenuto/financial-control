@@ -1,40 +1,45 @@
 package com.brenobenevenuto.financialcontrol.domain;
-
-
+import com.brenobenevenuto.financialcontrol.domain.Request.UserRequest;
 import jakarta.persistence.*;
-import lombok.*;
-import org.hibernate.id.GUIDGenerator;
-import org.springframework.data.repository.NoRepositoryBean;
-
-import java.security.PublicKey;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity(name = "users")
 @Table(name = "users")
 @Getter
 @Setter
-@NoArgsConstructor
 @EqualsAndHashCode(of = "Id")
 public class User {
+
     @jakarta.persistence.Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public long Id;
 
-    @Column(unique = true)
     public String Name;
+
     @Column(unique = true)
     public String UserName;
-    @Column(unique = true)
 
     public String Password;
 
-    @Enumerated(EnumType.STRING)
+    @Column(unique = true)
     public UserType Type;
 
-    public User(String name, String passWord, String userName)
+    public User(String name, String userName, String passWord,UserType type)
     {
-        Name = name;
-        Password = passWord;
-        UserName = userName;
+        this.Name = name;
+        this.UserName = userName;
+        this.Password = passWord;
+        this.Type = type;
     }
 
+    public static User map(UserRequest userRequest, UserType type)
+    {
+        return new User(userRequest.UserName(),userRequest.Name(),userRequest.Password(), type);
+    }
 }
