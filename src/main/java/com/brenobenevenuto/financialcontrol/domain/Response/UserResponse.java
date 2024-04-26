@@ -5,7 +5,7 @@ import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.NoArgsConstructor;
 
-@NoArgsConstructor
+
 public record UserResponse(long Id,
                            String Name,
                            String UserName) {

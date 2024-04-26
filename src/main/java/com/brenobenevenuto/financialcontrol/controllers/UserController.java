@@ -1,10 +1,10 @@
-package com.brenobenevenuto.financialcontrol.Controller;
+package com.brenobenevenuto.financialcontrol.controllers;
 
-import com.brenobenevenuto.financialcontrol.Service.UserService;
 import com.brenobenevenuto.financialcontrol.domain.Request.UserRequest;
 import com.brenobenevenuto.financialcontrol.domain.Response.UserResponse;
 import com.brenobenevenuto.financialcontrol.domain.User;
 import com.brenobenevenuto.financialcontrol.domain.UserType;
+import com.brenobenevenuto.financialcontrol.services.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/user")
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class UserController {
+
     private final UserService _service;
 
     @PostMapping("/healthCheck")
@@ -37,7 +38,7 @@ public class UserController {
     }
 
 
-    @Operation(summary = "Cria um Usuario", responses = @ApiResponse(responseCode = "200", description = "Successfully", content = @Content(mediaType = "application/json", schema = @Schema(implementation = UserResponse.class))))
+    @Operation(summary = "Retorna um Usuario por Id", responses = @ApiResponse(responseCode = "200", description = "Successfully", content = @Content(mediaType = "application/json", schema = @Schema(implementation = UserResponse.class))))
     @PostMapping("/getById")
     public UserResponse getById(@Valid @RequestParam long id){
         return _service.GetById(id);
