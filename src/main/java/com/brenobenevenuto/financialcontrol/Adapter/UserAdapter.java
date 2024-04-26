@@ -11,6 +11,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.annotation.Validated;
 
+import java.util.Optional;
+
 @Component
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class UserAdapter implements UserPort {
@@ -21,6 +23,16 @@ public class UserAdapter implements UserPort {
     @Override
     public User save(User user)  {
         return _userRepository.save(user);
+    }
+
+    @Override
+    public void delete(long id) {
+        _userRepository.deleteById(id);
+    }
+
+    @Override
+    public Optional<User> getById(long id) {
+        return _userRepository.findById(id);
     }
 
 }

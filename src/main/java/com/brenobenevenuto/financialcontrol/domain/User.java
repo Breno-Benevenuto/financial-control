@@ -4,15 +4,13 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Entity(name = "users")
 @Table(name = "users")
 @Getter
 @Setter
+@NoArgsConstructor
 @EqualsAndHashCode(of = "Id")
 public class User {
 
@@ -27,7 +25,6 @@ public class User {
 
     public String Password;
 
-    @Column(unique = true)
     public UserType Type;
 
     public User(String name, String userName, String passWord,UserType type)

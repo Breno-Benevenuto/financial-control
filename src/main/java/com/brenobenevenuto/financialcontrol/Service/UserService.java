@@ -22,6 +22,22 @@ public class UserService {
     public UserResponse CreateCommom(UserRequest user){
         User newCommomUser = _userPort.save(User.map(user, UserType.Commom));
 
-        return new UserResponse(newCommomUser.getName(), newCommomUser.getUserName());
+        return new UserResponse(newCommomUser.getId(), newCommomUser.getName(), newCommomUser.getUserName());
     }
+
+    public UserResponse GetById(long id)
+    {
+        User user = _userPort.getById(id).orElse(new User());
+        return new UserResponse(user.getId(), user.getName(), user.getUserName());
+    }
+
+    public Boolean DeleteById(long id)
+    {
+        if (_userPort.getById(id).isEmpty()){
+            return false; //TODO: Exeption
+        }
+        _userPort.delete(id);
+        return true;
+    }
+
 }
