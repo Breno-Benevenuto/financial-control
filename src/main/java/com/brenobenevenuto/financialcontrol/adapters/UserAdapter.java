@@ -8,6 +8,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.Optional;
+
 @Component
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class UserAdapter implements UserPort {
@@ -18,6 +20,16 @@ public class UserAdapter implements UserPort {
     @Override
     public User save(User user)  {
         return _userRepository.save(user);
+    }
+
+    @Override
+    public void delete(long id) {
+        _userRepository.deleteById(id);
+    }
+
+    @Override
+    public Optional<User> getById(long id) {
+        return _userRepository.findById(id);
     }
 
 }
