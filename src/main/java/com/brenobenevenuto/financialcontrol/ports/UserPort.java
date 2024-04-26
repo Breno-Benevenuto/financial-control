@@ -1,7 +1,6 @@
-package com.brenobenevenuto.financialcontrol.Port;
+package com.brenobenevenuto.financialcontrol.ports;
 
 import com.brenobenevenuto.financialcontrol.domain.User;
-import com.brenobenevenuto.financialcontrol.domain.UserType;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;

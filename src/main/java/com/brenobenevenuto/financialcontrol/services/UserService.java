@@ -1,17 +1,14 @@
-package com.brenobenevenuto.financialcontrol.Service;
+package com.brenobenevenuto.financialcontrol.services;
 
 
-import com.brenobenevenuto.financialcontrol.Port.UserPort;
-import com.brenobenevenuto.financialcontrol.Repositories.UserRepository;
 import com.brenobenevenuto.financialcontrol.domain.Request.UserRequest;
 import com.brenobenevenuto.financialcontrol.domain.Response.UserResponse;
+import com.brenobenevenuto.financialcontrol.ports.UserPort;
 import com.brenobenevenuto.financialcontrol.domain.User;
 import com.brenobenevenuto.financialcontrol.domain.UserType;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import javax.sql.rowset.spi.TransactionalWriter;
 
 @Service
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
