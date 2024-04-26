@@ -13,4 +13,9 @@ public class GlobalExceptionHandler {
     public ResponseEntity<String>HandleUserNotFound(Exception exception){
         return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<String>GenericException(Exception exception){
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+    }
 }
