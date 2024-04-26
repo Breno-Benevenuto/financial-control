@@ -1,8 +1,9 @@
-package com.brenobenevenuto.financialcontrol.Controller;
+package com.brenobenevenuto.financialcontrol.controllers;
 
-import com.brenobenevenuto.financialcontrol.Service.UserService;
 import com.brenobenevenuto.financialcontrol.domain.Request.UserRequest;
 import com.brenobenevenuto.financialcontrol.domain.Response.UserResponse;
+import com.brenobenevenuto.financialcontrol.services.UserService;
+
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;

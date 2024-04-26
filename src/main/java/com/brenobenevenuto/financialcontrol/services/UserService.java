@@ -1,9 +1,9 @@
-package com.brenobenevenuto.financialcontrol.Service;
+package com.brenobenevenuto.financialcontrol.services;
 
 
-import com.brenobenevenuto.financialcontrol.Port.UserPort;
 import com.brenobenevenuto.financialcontrol.domain.Request.UserRequest;
 import com.brenobenevenuto.financialcontrol.domain.Response.UserResponse;
+import com.brenobenevenuto.financialcontrol.ports.UserPort;
 import com.brenobenevenuto.financialcontrol.domain.User;
 import com.brenobenevenuto.financialcontrol.domain.UserType;
 import lombok.RequiredArgsConstructor;
