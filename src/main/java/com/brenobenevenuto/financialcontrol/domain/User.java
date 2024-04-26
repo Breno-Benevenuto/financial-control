@@ -1,10 +1,6 @@
 package com.brenobenevenuto.financialcontrol.domain;
 import com.brenobenevenuto.financialcontrol.domain.Request.UserRequest;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.Pattern;
-import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;

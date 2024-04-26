@@ -1,9 +1,5 @@
 package com.brenobenevenuto.financialcontrol.domain;
 
-
-import lombok.Getter;
-
-
 public enum UserType {
     Admin(1),
     Commom(2);
