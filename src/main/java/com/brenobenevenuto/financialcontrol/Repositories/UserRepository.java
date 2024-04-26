@@ -1,4 +1,4 @@
-package com.brenobenevenuto.financialcontrol.Repositories;
+package com.brenobenevenuto.financialcontrol.repositories;
 
 import com.brenobenevenuto.financialcontrol.domain.User;
 import org.springframework.data.repository.ListCrudRepository;

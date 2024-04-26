@@ -1,8 +1,9 @@
-package com.brenobenevenuto.financialcontrol.Adapter;
+package com.brenobenevenuto.financialcontrol.adapters;
 
-import com.brenobenevenuto.financialcontrol.Port.UserPort;
-import com.brenobenevenuto.financialcontrol.Repositories.UserRepository;
 import com.brenobenevenuto.financialcontrol.domain.User;
+import com.brenobenevenuto.financialcontrol.ports.UserPort;
+import com.brenobenevenuto.financialcontrol.repositories.UserRepository;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
