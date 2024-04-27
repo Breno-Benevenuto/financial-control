@@ -3,6 +3,7 @@ package com.brenobenevenuto.financialcontrol.services;
 
 import com.brenobenevenuto.financialcontrol.domain.Request.UserRequest;
 import com.brenobenevenuto.financialcontrol.domain.Response.UserResponse;
+import com.brenobenevenuto.financialcontrol.exceptions.UserNotFoundException;
 import com.brenobenevenuto.financialcontrol.ports.UserPort;
 import com.brenobenevenuto.financialcontrol.domain.User;
 import com.brenobenevenuto.financialcontrol.domain.UserType;
@@ -24,7 +25,7 @@ public class UserService {
 
     public UserResponse GetById(long id)
     {
-        User user = _userPort.getById(id).orElse(new User());
+        User user = _userPort.getById(id).orElseThrow(() -> new UserNotFoundException("Usuário Não Encontrado"));
         return new UserResponse(user.getId(), user.getName(), user.getUserName());
     }
 
